@@ -1,1 +1,14 @@
-{{name}}
+<div class="row header">
+    <div class="col-xs-9">
+        <span class="pronoapp">PRONO APP</span>
+    </div>
+    <div class="col-xs-3">
+        <a [routerLink]="['/login']">
+            <img src="./resources/anonym.png" width="45px">
+        </a>
+    </div>
+</div>
+<!-- Router Outlet -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

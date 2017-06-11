@@ -1,0 +1,13 @@
+.header {
+    margin: 5px;
+    padding-top: 2px;
+    height: 50px;
+    background-color: yellowgreen;
+    box-shadow: 4px 4px;
+}
+
+.pronoapp {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 30px;
+    color: white;
+}
