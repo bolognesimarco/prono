@@ -1,14 +1,14 @@
 <div class="container-fluid login">
     <form>
         <div class="form-group">
-            <input type="email" class="form-control" id="email" [(ngModel)]="userOrEmail" placeholder="Userid or email">
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="userOrEmail" placeholder="Userid or email">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" id="pwd" [(ngModel)]="password" placeholder="password">
+            <input type="password" class="form-control" id="pwd" name="pwd" [(ngModel)]="password" placeholder="password">
         </div>
         <div class="checkbox">
             <label><input type="checkbox"> Remember me</label>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <input type="button" class="btn btn-default" value="Login" (click)="login()" />
     </form>
 </div>

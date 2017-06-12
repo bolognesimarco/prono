@@ -5,9 +5,13 @@ import { LoginService } from './login/login.service';
 @Component({
   selector: 'pronoapp',
   templateUrl: './app.html',
-  styleUrls: ['./app.css'],
-  providers: [ LoginService ]
+  styleUrls: ['./app.css']
 })
+
+
 export class AppComponent  { 
-  name = 'Starting with Angular prono app'; 
+
+  constructor(private loginService: LoginService){}
+
+
 }
