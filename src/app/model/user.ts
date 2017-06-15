@@ -3,4 +3,6 @@ export class User {
   userid: string;
   email: string;
   password: string;
+  score: number;
+  surpriseScore: number;
 }

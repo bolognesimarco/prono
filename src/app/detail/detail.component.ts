@@ -4,10 +4,10 @@ import { User } from '../model/user';
 import { Router } from '@angular/router';
 
 @Component({
-  templateUrl: './login.html',
-  styleUrls: ['./login.css']
+  templateUrl: './detail.html',
+  styleUrls: ['./detail.css']
 })
-export class LoginComponent  { 
+export class DetailComponent  { 
   userOrEmail: string;
   password: string;
   
@@ -15,11 +15,5 @@ export class LoginComponent  {
     private loginService: LoginService, 
     private router: Router
   ){}
-
-  public login() {
-    let _this = this;
-    this.loginService.login(this.userOrEmail, this.password, function() {
-      _this.router.navigate(['home']);
-    });
-  }
+  
 }

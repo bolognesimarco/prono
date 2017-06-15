@@ -8,12 +8,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { GuestComponent } from './guest/guest.component';
 import { HomeComponent } from './home/home.component';
-import { LoginService } from './login/login.service';
+import { DetailComponent } from './detail/detail.component';
+import { UserComponent } from './user/user.component';
+import { LoginService } from './services/login.service';
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, JsonpModule, RouterModule.forRoot(appRoutes) ],
-  declarations: [ AppComponent, LoginComponent, GuestComponent, HomeComponent ],
+  declarations: [ AppComponent, LoginComponent, GuestComponent, HomeComponent, DetailComponent, UserComponent ],
   bootstrap:    [ AppComponent ],
   providers:    [ LoginService ]
 

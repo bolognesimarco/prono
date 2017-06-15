@@ -1,0 +1,43 @@
+.middle {
+    vertical-align: middle;
+}
+
+.score {
+    font-size: 30px;
+    color: green;
+    font-weight: bold;
+}
+
+.md-20 {
+    font-size: 20px; 
+}
+
+.md-26 {
+    font-size: 26px; 
+}
+
+.md-46 {
+    font-size: 46px; 
+}
+
+.md-60 {
+    font-size: 60px; 
+}
+
+.md-80 {
+    font-size: 80px; 
+}
+
+.desc_color{
+    color: orange;
+}
+
+.font-40 {
+    font-size: 40px;
+    color: orange;
+    vertical-align: middle;
+}
+
+.command_row {
+    padding-top: 20px;
+}

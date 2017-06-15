@@ -1,0 +1,22 @@
+<div class="container-fluid">
+
+    <div class="alert alert-info" role="alert">
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        OVERALL SCORE: <span class="score"> {{loginService.logged.score}} %</span>
+    </div>
+
+    <div class="alert alert-info" role="alert">
+        <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
+        SURPRISE SCORE: <span class="score"> {{loginService.logged.surpriseScore}} %</span>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-lg btn-block">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+        Details
+    </button>
+
+    <button type="button" class="btn btn-danger btn-lg btn-block">
+        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        Logout
+    </button>
+</div>

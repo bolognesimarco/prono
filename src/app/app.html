@@ -1,14 +1,14 @@
-<div class="row header">
-    <div class="col-xs-9">
-        <span class="pronoapp">PRONO APP</span>
-    </div>
-    <div class="col-xs-3">
-        <a [routerLink]="['/login']">
-            <img src="./resources/anonym.png" [class]="loginService.avatarClass" width="45px">
-        </a>
+<div class="container-fluid">
+    <div class="row header">
+        <div class="col-xs-9">
+            <span class="pronoapp">PRONO APP</span>
+        </div>
+        <div class="col-xs-3">
+            <i [class]="loginService.avatarClass" (click)="userClick()">account_circle</i>
+        </div>
     </div>
 </div>
 <!-- Router Outlet -->
-<div class="container">
+<div class="container-fluid">
     <router-outlet></router-outlet>
 </div>
