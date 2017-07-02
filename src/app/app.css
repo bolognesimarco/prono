@@ -1,5 +1,5 @@
 .header {
-    margin: 5px;
+    /*margin: 5px;*/
     padding-top: 2px;
     height: 50px;
     background-color: yellowgreen;
@@ -11,8 +11,8 @@
     color: white;
 }
 
-.material-icons.md-46 { 
-    font-size: 46px; 
+.md-42 { 
+    font-size: 42px; 
     cursor: pointer;
 }
 
@@ -22,4 +22,9 @@
 
 .guestAvatarColor {
     color: white;
+}
+
+.zeroPadding {
+    padding-left: 0px;
+    padding-right: 0px;
 }

@@ -1,13 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid zeroPadding">
 
     <div class="alert alert-info" role="alert">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        OVERALL SCORE: <span class="score"> {{loginService.logged.score}} %</span>
+        <span class="glyphicon glyphicon-star" aria-hidden="true"> OVERALL SCORE: {{loginService.logged.score}}%</span>
     </div>
 
     <div class="alert alert-info" role="alert">
-        <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
-        SURPRISE SCORE: <span class="score"> {{loginService.logged.surpriseScore}} %</span>
+        <span class="glyphicon glyphicon-gift" aria-hidden="true"> SURPRISE SCORE: {{loginService.logged.surpriseScore}}%</span>
     </div>
 
     <button type="button" class="btn btn-primary btn-lg btn-block">
@@ -15,7 +13,7 @@
         Details
     </button>
 
-    <button type="button" class="btn btn-danger btn-lg btn-block">
+    <button type="button" class="btn btn-danger btn-lg btn-block" (click)="logout()">
         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
         Logout
     </button>

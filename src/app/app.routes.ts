@@ -29,5 +29,7 @@ export const appRoutes: Routes = [
     {
         path: '',
         component: GuestComponent
-    }
+    },
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
 ];

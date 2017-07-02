@@ -4,11 +4,11 @@
             <span class="pronoapp">PRONO APP</span>
         </div>
         <div class="col-xs-3">
-            <i [class]="loginService.avatarClass" (click)="userClick()">account_circle</i>
+            <span [class]="loginService.getAvatarClass()" (click)="userClick()"></span>
         </div>
     </div>
 </div>
 <!-- Router Outlet -->
-<div class="container-fluid">
+<div class="container-fluid zeroPadding">
     <router-outlet></router-outlet>
 </div>

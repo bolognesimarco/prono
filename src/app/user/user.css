@@ -41,3 +41,8 @@
 .command_row {
     padding-top: 20px;
 }
+
+.zeroPadding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
