@@ -13,12 +13,17 @@ import { Router } from '@angular/router';
 export class AppComponent  {
 
   private watchingUser: boolean = false; 
+  private sidenavwidthclass: String = "zerowidth";
 
   constructor(
     private loginService: LoginService, 
     private router: Router
   ){
     this.loginService.setUserLoggedOut();
+  }
+
+  public isUserLoggedIn(): boolean {
+    return this.loginService.isUserLoggedIn();
   }
 
   public userClick(): void {
@@ -34,5 +39,15 @@ export class AppComponent  {
       this.router.navigate(['login']);
     }
   }
+  
+
+  public logout() {
+    let _this = this;
+    this.loginService.logout(function() {
+      _this.router.navigate(['']);
+    });
+  }
+
+
 
 }
