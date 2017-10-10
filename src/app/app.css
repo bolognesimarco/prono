@@ -2,14 +2,26 @@
     color: red;
 }
 
-.icon-bar-top {
+.icon-bar-top-in {
     background-color: green !important;  
 }
 
-.icon-bar-central {
+.icon-bar-central-in {
     background-color: green !important;
 }
 
-.icon-bar-bottom {
+.icon-bar-bottom-in {
     background-color: green !important; 
+}
+
+.icon-bar-top-out {
+    background-color: grey !important;  
+}
+
+.icon-bar-central-out {
+    background-color: grey !important;
+}
+
+.icon-bar-bottom-out {
+    background-color: grey !important; 
 }

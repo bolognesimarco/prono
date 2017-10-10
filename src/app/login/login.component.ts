@@ -7,19 +7,19 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })
-export class LoginComponent implements OnInit { 
-  
+export class LoginComponent implements OnInit {
+
   private userOrEmail: string;
   private password: string;
   private returnUrl: string
   private tempUser: User = null;
   private message: String = null;
-  
+
   constructor(
-    private loginService: LoginService, 
+    private loginService: LoginService,
     private router: Router,
     private route: ActivatedRoute,
-  ){}
+  ) { }
 
   ngOnInit() {
     // this.loginService.logout(() => {
@@ -31,33 +31,22 @@ export class LoginComponent implements OnInit {
   }
 
 
-  
+
   public login() {
     this.loginService.checkLogin(this.userOrEmail, this.password).subscribe(
       users => {
-        console.log(users);
-        if(users==null || users.length==0){
-          console.log("TODO: gestire il login andato male");
-        } else {
+        if (users != null && users.length > 0) {
           this.tempUser = users[0];
         }
       },
       error => {
-        console.log("TODO: gestire il login andato male");
         console.log(error);
       },
       () => {
-        console.log("finished");
-        if(this.tempUser != null) {
-
-          if(this.tempUser.password == this.password) {
-            this.loginService.login(this.tempUser);
-            this.router.navigate(['home']);
-          } else {
-            this.message = "Wrong Credentials !!";
-          }
+        if (this.tempUser != null) {
+          this.loginService.login(this.tempUser);
+          this.router.navigate(['home']);
         } else {
-          console.log("TODO: gestire il login andato male");
           this.loginService.logout();
           this.message = "Wrong Credentials !!";
         }

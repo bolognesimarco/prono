@@ -14,7 +14,7 @@ export class LoginService {
     constructor(private http: Http) { }
 
     public checkLogin(username: string, password: string):Observable<User[]> {
-        return this.http.get('api/users/?username='+username+'$')
+        return this.http.get('api/users/?username='+username+'$&password='+password+'$')
                 .map(response => response.json().data as User[]);
     }
 

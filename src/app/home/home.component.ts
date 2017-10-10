@@ -3,7 +3,7 @@ import { LoginService } from '../services/login.service';
 
 @Component({
   templateUrl: './home.html',
-  styleUrls: ['./home.css']
+  styleUrls: ['./home.css', './font/flaticon.css']
 })
 export class HomeComponent  { 
   constructor(
