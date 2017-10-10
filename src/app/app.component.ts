@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { LoginService } from './services/login.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'pronoapp',
   templateUrl: './app.html',
@@ -19,33 +18,31 @@ export class AppComponent  {
     private loginService: LoginService, 
     private router: Router
   ){
-    this.loginService.setUserLoggedOut();
+    this.loginService.logout();
   }
 
   public isUserLoggedIn(): boolean {
     return this.loginService.isUserLoggedIn();
   }
 
-  public userClick(): void {
-    if(this.loginService.isUserLoggedIn()) {
-      if(this.watchingUser) {
-        this.watchingUser = false;
-        this.router.navigate(['home']);
-      } else {
-        this.watchingUser = true;
-        this.router.navigate(['user']);
-      }
-    } else {
-      this.router.navigate(['login']);
-    }
-  }
+  // public userClick(): void {
+  //   if(this.loginService.isUserLoggedIn()) {
+  //     if(this.watchingUser) {
+  //       this.watchingUser = false;
+  //       this.router.navigate(['home']);
+  //     } else {
+  //       this.watchingUser = true;
+  //       this.router.navigate(['user']);
+  //     }
+  //   } else {
+  //     this.router.navigate(['login']);
+  //   }
+  // }
   
 
   public logout() {
-    let _this = this;
-    this.loginService.logout(function() {
-      _this.router.navigate(['']);
-    });
+    this.loginService.logout();
+    this.router.navigate(['']);
   }
 
 

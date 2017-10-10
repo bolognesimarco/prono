@@ -25,10 +25,8 @@ export class UserComponent implements OnInit {
   }
 
   public logout(){
-    let _this = this;
-    this.loginService.logout(function(){
-      _this.router.navigate(['guest']);
-    });    
+    this.loginService.logout();
+    this.router.navigate(['guest']);
   }
   
 }

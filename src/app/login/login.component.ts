@@ -8,9 +8,12 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.css']
 })
 export class LoginComponent implements OnInit { 
-  userOrEmail: string;
-  password: string;
-  returnUrl: string
+  
+  private userOrEmail: string;
+  private password: string;
+  private returnUrl: string
+  private tempUser: User = null;
+  private message: String = null;
   
   constructor(
     private loginService: LoginService, 
@@ -19,20 +22,47 @@ export class LoginComponent implements OnInit {
   ){}
 
   ngOnInit() {
-      // reset login status
-    let _this = this;
-    this.loginService.logout(function(){
-      // get return url from route parameters or default to '/'
-      _this.returnUrl = _this.route.snapshot.queryParams['returnUrl'] || '/';
-      console.log(_this.returnUrl);
-    });
-
+    // this.loginService.logout(() => {
+    //   this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    //   //questo è per estrarre dal routing l'indirizzo del chiamante, per poter eventualmente
+    //   // decidere che fare dopo il logout.
+    //   console.log(this.returnUrl);
+    // });
   }
 
+
+  
   public login() {
-    let _this = this;
-    this.loginService.login(this.userOrEmail, this.password, function() {
-      _this.router.navigate(['home']);
-    });
+    this.loginService.checkLogin(this.userOrEmail, this.password).subscribe(
+      users => {
+        console.log(users);
+        if(users==null || users.length==0){
+          console.log("TODO: gestire il login andato male");
+        } else {
+          this.tempUser = users[0];
+        }
+      },
+      error => {
+        console.log("TODO: gestire il login andato male");
+        console.log(error);
+      },
+      () => {
+        console.log("finished");
+        if(this.tempUser != null) {
+
+          if(this.tempUser.password == this.password) {
+            this.loginService.login(this.tempUser);
+            this.router.navigate(['home']);
+          } else {
+            this.message = "Wrong Credentials !!";
+          }
+        } else {
+          console.log("TODO: gestire il login andato male");
+          this.loginService.logout();
+          this.message = "Wrong Credentials !!";
+        }
+      }
+    );
   }
+
 }

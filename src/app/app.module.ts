@@ -12,9 +12,19 @@ import { DetailComponent } from './detail/detail.component';
 import { UserComponent } from './user/user.component';
 import { LoginService } from './services/login.service';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpModule, JsonpModule, RouterModule.forRoot(appRoutes) ],
+  imports:      [ 
+                  BrowserModule, 
+                  FormsModule, 
+                  HttpModule, 
+                  InMemoryWebApiModule.forRoot(InMemoryDataService), 
+                  JsonpModule, 
+                  RouterModule.forRoot(appRoutes) 
+                ],
   declarations: [ AppComponent, LoginComponent, GuestComponent, HomeComponent, DetailComponent, UserComponent ],
   bootstrap:    [ AppComponent ],
   providers:    [ LoginService ]
